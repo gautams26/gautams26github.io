@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>button demo</title></head>
+<body>
+<center>
+<div style="border-style:solid;width:360px;height:200px;padding-top:20px;">
+Enter 1st number:&nbsp;<input type="text" placeholder="1st number" id="a"></br></br>
+Enter 2nd number:&nbsp;<input type="text" placeholder="2nd number" id="b"></br></br>
+<button onclick="mul()">Multiply</button>
+<button onclick="div()">Divide</button>
+<p>The result is:</p>
+<p id="re"></p>
+</div>
+</center>
+<script>
+function mul(){
+var a=+(document.getElementById("a").value);
+var b=+(document.getElementById("b").value);
+document.getElementById("re").innerHTML=(a*b);
+}
+function div(){
+var a=Number((document.getElementById("a").value));
+var b=+(document.getElementById("b").value);
+document.getElementById("re").innerHTML=(a/b);
+}
+</script>
+</body>
+</html>

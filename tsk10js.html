@@ -1,0 +1,51 @@
+<html>
+<head><title>JS Functions</title>
+</head>
+<body>
+<table width="700px">
+<tr><td>concat method:<p id="con"></p></td><td>findindex method:<p id="findind"></p></td></tr>
+<tr><td>copywithin method:<p id="copy"></p></td><td>indexof method:<p id="iof"></p></td></tr>
+<tr><td>map method:<p id="map"></p></td><td>lastIndex of method:</br><p id="last"></p></td></tr>
+<tr><td>every method:</br><p id="every"></p></td><td>push method:</br><p id="push"></p></td></tr>
+<tr><td>some method:</br><p id="some"></p></td><td>pop method:</br><p id="pop"></p></td></tr>
+<tr><td>filter method:</br><p id="filter"></p></td><td>shift method:</br><p id="shift"></p></td></tr>
+<tr><td>find method:</br><p id="find"></p></td><td><button onclick="show()">show</button></td></tr>
+</table>
+<script>
+function show(){
+let x=[10,20,30,25,15];
+let y=[40,50,60,70,65];
+let z=x.concat(y);
+document.getElementById("con").innerHTML="["+z+"]";
+z=z.copyWithin(3,0);
+document.getElementById("copy").innerHTML="["+z+"]";
+z.map((x)=>{
+document.getElementById("map").innerHTML+=x+"</br>"
+});
+document.getElementById("every").innerHTML=z.every((x)=>{
+return x>20;
+});
+document.getElementById("some").innerHTML=z.some((x)=>{
+return x>20;
+});
+document.getElementById("filter").innerHTML="["+z.filter((x)=>{
+return x>20;
+})+"]";
+document.getElementById("find").innerHTML=z.find((x)=>{
+return x>20;
+});
+document.getElementById("findind").innerHTML=z.findIndex((x)=>{
+return x>20;
+});
+document.getElementById("iof").innerHTML=z.indexOf(20);
+document.getElementById("last").innerHTML=z.lastIndexOf(20);
+z.push(100);
+document.getElementById("push").innerHTML="["+z+"]";
+z.pop();
+document.getElementById("pop").innerHTML="["+z+"]";
+z.shift();
+document.getElementById("shift").innerHTML="["+z+"]";
+}
+</script>
+</body>
+</html>

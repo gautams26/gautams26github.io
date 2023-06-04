@@ -1,0 +1,40 @@
+<html>
+<head>
+<title>JS Form validation</title>
+<style>
+#bo{
+border-color:1px solid blue;
+}
+</style>
+</head>
+<body>
+<form onsubmit="return validate()">
+<table cellspacing="6px">
+<tr>
+<td>Name:</td><td><input type="text"  id="name"> <span id="n1" style="color:red"></span></td></tr>
+<tr><td>Email:</td><td><input type="text" id="email"><span id="n2" style="color:red"></span></td></tr>
+<tr><td>Website:</td><td><input type="text"  id="web"><span id="n3" style="color:red"></span></td></tr>
+<tr><td>Message:</td><td><textarea cols="25" rows="5"  id="mess"></textarea><span id="n4" style="color:red"></span></td></tr>
+<tr><td></td><td><input type="submit" value="submit"></td></tr>
+</form>
+<script>
+function validate(){
+let na=document.getElementById("name").value;
+let em=document.getElementById("email").value;
+let web=document.getElementById("web").value;
+let mes=document.getElementById("mess").value;
+if(na=="" || em=="" || web=="" || mes==""){
+document.getElementById("name").style.border="thin solid red";
+document.getElementById("n1").innerHTML="This field is required";
+document.getElementById("email").style.border="thin solid red";
+document.getElementById("n2").innerHTML="A valid email address required";
+document.getElementById("web").style.border="thin solid red";
+document.getElementById("n3").innerHTML="A valid url required";
+document.getElementById("mess").style.border="thin solid red";
+document.getElementById("n4").innerHTML="This field required";
+return false;}
+else{return true;}
+}
+</script>
+</body>
+</html>
