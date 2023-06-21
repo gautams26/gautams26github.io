@@ -1,0 +1,82 @@
+<!Doctype html>
+<html>
+    <head>
+        <Title>AGE CALCULATOR</Title>
+    <style>
+    body
+        {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 16px;
+        margin:0;
+        background:black;
+        display:flex;  
+        min-height:100vh;
+        justify-content: space-around;  
+        align-items: center;
+        }
+        .a
+        {
+            width: 100%;
+           max-width: 600px;
+           color: #fff;
+           text-align: center;
+            padding: 30px;
+            border-radius: 30px;
+            background:linear-gradient(to bottom, #cf0f1f 50%,#fd0495)  
+        }
+        .a input
+        {
+            width: 40%;
+            display: block;
+            margin: 0 auto 20px;
+            font-size: 20px;
+            padding-top: 13px;
+            padding-bottom: 13px;
+            border-radius: 10px;
+            border: 0;   
+        }
+        .a button
+        {
+            width: 120px;
+            display: block;
+            margin: 0 auto 20px;
+            padding-top: 13px;
+            padding-bottom: 13px;
+            border-radius: 10px;
+            border: 0;
+            background-color: #e60b8b;
+            color:#fff;
+            font: weight 500px;
+            font-size: larger;
+            cursor:pointer;
+
+        }
+        #Calc_age
+        {
+            font: weight 500px;
+            font-size: x-large;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="a">
+            <h1>Age Calculator</h1>
+            <input type="date" name="" id="b_date">
+            <button id="calc_but">Calculate</button>
+            <div id="Calc_age">Your Age is:</div>
+        </div>
+       <script>
+        var calc_but=document.getElementById('calc_but'),
+        Calc_age=document.getElementById('Calc_age');
+        calc_but.addEventListener('click',function(){
+        var b_date=document.getElementById('b_date').value;
+        b_date=new Date(b_date);
+         var today=new Date();
+        totalAge=Date.now()-b_date.getTime();
+        ageYear=new Date(totalAge);
+        ageYear=Math.abs(ageYear.getFullYear()-1970);
+        Calc_age.innerHTML="Your Age: "+ ageYear+" Years"
+})
+       </script> 
+    </body>
+</html>
